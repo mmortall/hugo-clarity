@@ -21,7 +21,7 @@ function elem(selector, parent = document){
 
 function elems(selector, parent = document) {
   let elems = parent.querySelectorAll(selector);
-  return elems.length ? elems : false;
+  return elems;
 }
 
 function pushClass(el, targetClass) {
