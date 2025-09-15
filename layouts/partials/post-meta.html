@@ -20,6 +20,16 @@
     </span>
     {{- $scratch.Set "writeSeparator" true }}
   {{- end }}
+
+  {{- $author := default .Site.Params.author .Params.author }}
+  {{- with $author }}
+    <span class="post_author">
+      {{ if ($scratch.Get "writeSeparator") }} · {{ end }}
+      🙎🏻‍♂️ {{ . }}
+    </span>
+    {{- $scratch.Set "writeSeparator" true }}
+  {{- end }}
+
   {{- if $showReadTime }}
     <span class="post_time">{{ if ($scratch.Get "writeSeparator") }} · {{ end }}{{ T "reading_time" . }}</span>
     {{- $scratch.Set "writeSeparator" true }}
